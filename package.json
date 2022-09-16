@@ -1,6 +1,6 @@
 {
   "name": "saferme-ui-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A UI library for React projects",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -39,5 +39,9 @@
   },
   "dependencies": {
     "styled-components": "^5.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcking49/saferme-ui-react.git"
   }
 }
