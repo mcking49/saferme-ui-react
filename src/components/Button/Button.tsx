@@ -9,6 +9,7 @@ const StyledButton = styled.button<ButtonProps>`
   color: cyan;
   padding: 16px 32px;
   border-radius: 8px;
+  background-color: ${props => props.theme.colors.secondary.green.bright};
 `
 
 export const Button: FC<ButtonProps> = ({ children, ...props }) => {
