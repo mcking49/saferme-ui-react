@@ -93,5 +93,14 @@ declare module 'styled-components' {
         },
       },
     },
+    typography: {
+      body: CSSObject,
+      fieldLabel: CSSObject,
+      font: string,
+      heading1: CSSObject,
+      heading2: CSSObject,
+      helpText: CSSObject,
+      hyperlink: CSSObject,
+    }
   }
 }
