@@ -1,8 +1,11 @@
-import React from "react";
-import Theme from "./Theme";
+import React from 'react'
 
-const THEME_DECORATOR = (Story: React.FC) => <Theme><Story /></Theme>
+import Theme from './Theme'
 
-export const DECORATORS = [
-  THEME_DECORATOR,
-]
+const THEME_DECORATOR = (Story: React.FC) => (
+  <Theme>
+    <Story />
+  </Theme>
+)
+
+export const DECORATORS = [THEME_DECORATOR]

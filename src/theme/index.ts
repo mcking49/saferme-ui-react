@@ -1,16 +1,19 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components'
 
 // Primary colors
 const primaryBlue = (opacity: number = 1) => `rgba(1, 132, 181, ${opacity})`
-const primaryBlueTinted = (opacity: number = 1) => `rgba(1, 112, 153, ${opacity})`
+const primaryBlueTinted = (opacity: number = 1) =>
+  `rgba(1, 112, 153, ${opacity})`
 const primaryDarkBlue = (opacity: number = 1) => `rgba(37, 64, 78, ${opacity})`
 const primaryWhite = (opacity: number = 1) => `rgba(255, 255, 255, ${opacity})`
 
 // Secondary colors
-const secondaryDarkOrange = (opacity: number = 1) => `rgba(244, 102, 31, ${opacity})`
+const secondaryDarkOrange = (opacity: number = 1) =>
+  `rgba(244, 102, 31, ${opacity})`
 const secondaryGreen = (opacity: number = 1) => `rgba(7, 166, 153, ${opacity})`
 const secondaryGrey = (opacity: number = 0.15) => primaryDarkBlue(opacity)
-const secondaryOrange = (opacity: number = 1) => `rgba(244, 155, 32, ${opacity})`
+const secondaryOrange = (opacity: number = 1) =>
+  `rgba(244, 155, 32, ${opacity})`
 const secondaryRed = (opacity: number = 1) => `rgba(247, 84, 83, ${opacity})`
 
 const colors: DefaultTheme['colors'] = {
@@ -60,7 +63,7 @@ const colors: DefaultTheme['colors'] = {
       lightest: '#FDF0DE',
       lightestRGB: secondaryDarkOrange(0.15),
       main: '#F49B20',
-      mainRGB: secondaryDarkOrange()
+      mainRGB: secondaryDarkOrange(),
     },
     green: {
       bright: '#18A45A',
@@ -100,7 +103,7 @@ const colors: DefaultTheme['colors'] = {
       lightest: '#FEE5E5',
       lightestRGB: secondaryRed(0.15),
       main: '#F75453',
-      mainRGB: secondaryRed()
+      mainRGB: secondaryRed(),
     },
   },
 }
@@ -111,7 +114,7 @@ const typography: DefaultTheme['typography'] = {
     fontSize: '14px',
     fontStyle: 'normal',
     fontWeight: 400,
-    lineHeight: '1.6rem'
+    lineHeight: '1.6rem',
   },
   fieldLabel: {
     color: colors.primary.darkBlue.medium,
@@ -127,7 +130,7 @@ const typography: DefaultTheme['typography'] = {
     fontSize: '20px',
     fontStyle: 'normal',
     fontWeight: 700,
-    lineHeight: '1.6rem'
+    lineHeight: '1.6rem',
   },
   heading2: {
     color: colors.primary.darkBlue.main,
@@ -141,18 +144,18 @@ const typography: DefaultTheme['typography'] = {
     fontSize: '12px',
     fontStyle: 'normal',
     fontWeight: 400,
-    lineHeight: '1.6rem'
+    lineHeight: '1.6rem',
   },
   hyperlink: {
     color: colors.primary.blue.main,
     fontSize: '14px',
     fontStyle: 'normal',
     fontWeight: 400,
-    lineHeight: '1.6rem'
+    lineHeight: '1.6rem',
   },
 }
 
- export const THEME: DefaultTheme = {
+export const THEME: DefaultTheme = {
   colors,
   typography,
 }

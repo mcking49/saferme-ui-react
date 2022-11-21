@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import styled from "styled-components";
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -9,9 +9,9 @@ const StyledButton = styled.button<ButtonProps>`
   color: cyan;
   padding: 16px 32px;
   border-radius: 8px;
-  background-color: ${props => props.theme.colors.secondary.green.bright};
+  background-color: ${(props) => props.theme.colors.secondary.green.bright};
 `
 
 export const Button: FC<ButtonProps> = ({ children, ...props }) => {
-  return <StyledButton { ...props }>{children}</StyledButton>
+  return <StyledButton {...props}>{children}</StyledButton>
 }
