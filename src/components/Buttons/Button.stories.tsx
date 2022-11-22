@@ -14,7 +14,26 @@ export default {
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
-export const Standard = Template.bind({})
-Standard.args = {
-  children: 'Hello Button!',
+export const Default = Template.bind({})
+Default.args = {
+  children: 'Button',
+  variant: 'default',
+}
+
+export const Primary = Template.bind({})
+Primary.args = {
+  children: 'Button',
+  variant: 'primary',
+}
+
+export const Outline = Template.bind({})
+Outline.args = {
+  children: 'Button',
+  variant: 'outline',
+}
+
+export const Plain = Template.bind({})
+Plain.args = {
+  children: 'Button',
+  variant: 'plain',
 }

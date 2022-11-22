@@ -1,3 +1,7 @@
 import React from 'react'
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonVariants = 'primary' | 'outline' | 'plain' | 'default'
+
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: ButtonVariants
+}
