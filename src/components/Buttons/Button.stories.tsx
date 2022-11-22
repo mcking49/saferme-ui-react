@@ -2,8 +2,9 @@ import { Meta, Story } from '@storybook/react'
 import React from 'react'
 
 import { DECORATORS } from '../../utils/storybook'
+import { ButtonProps } from '../../types/button'
 
-import { Button, ButtonProps } from '.'
+import { Button } from '.'
 
 export default {
   title: 'Components/Button',

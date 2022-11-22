@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  html, body {
+  html, body, * {
     font-family: ${(props) => props.theme.typography.font};
     color: ${(props) => props.theme.typography.body.color};
     font-size: ${(props) => props.theme.typography.body.fontSize};
@@ -32,6 +32,17 @@ export const GlobalStyle = createGlobalStyle`
     font-style: ${(props) => props.theme.typography.hyperlink.fontStyle};
     font-weight: ${(props) => props.theme.typography.hyperlink.fontWeight};
     line-height: ${(props) => props.theme.typography.hyperlink.lineHeight};
+  }
+
+  button {
+    color: ${(props) => props.theme.typography.button.color};
+    cursor: pointer;
+    font-size: ${(props) => props.theme.typography.button.fontSize};
+    font-weight: ${(props) => props.theme.typography.button.fontWeight};
+    line-height: ${(props) => props.theme.typography.button.lineHeight};
+    text-align: ${(props) => props.theme.typography.button.textAlign};
+    text-transform: ${(props) => props.theme.typography.button.textTransform};
+    transition: ${(props) => props.theme.animations.buttons.transition};
   }
 
   label {

@@ -16,6 +16,12 @@ const secondaryOrange = (opacity: number = 1) =>
   `rgba(244, 155, 32, ${opacity})`
 const secondaryRed = (opacity: number = 1) => `rgba(247, 84, 83, ${opacity})`
 
+const animations: DefaultTheme['animations'] = {
+  buttons: {
+    transition: 'all 0.2s ease',
+  },
+}
+
 const colors: DefaultTheme['colors'] = {
   primary: {
     blue: {
@@ -108,6 +114,10 @@ const colors: DefaultTheme['colors'] = {
   },
 }
 
+const shadows: DefaultTheme['shadows'] = {
+  outline: `0 0 0 2px ${colors.primary.blue.lighterRGB}`,
+}
+
 const typography: DefaultTheme['typography'] = {
   body: {
     color: colors.primary.darkBlue.main,
@@ -115,6 +125,14 @@ const typography: DefaultTheme['typography'] = {
     fontStyle: 'normal',
     fontWeight: 400,
     lineHeight: '1.6rem',
+  },
+  button: {
+    color: colors.primary.darkBlue.main,
+    fontSize: '12px',
+    fontWeight: 400,
+    lineHeight: '1.6rem',
+    textAlign: 'center',
+    textTransform: 'uppercase',
   },
   fieldLabel: {
     color: colors.primary.darkBlue.medium,
@@ -156,7 +174,9 @@ const typography: DefaultTheme['typography'] = {
 }
 
 export const THEME: DefaultTheme = {
+  animations,
   colors,
+  shadows,
   typography,
 }
 
