@@ -3,7 +3,7 @@ import React from 'react'
 
 import { DECORATORS } from '../../utils/storybook'
 import { ButtonProps } from '../../types/button'
-import { IconCheckmark } from '../icons'
+import { IconArrowLeft, IconArrowRight, IconCheckmark } from '../icons'
 
 import { Button } from '.'
 
@@ -49,4 +49,20 @@ Plain.args = {
   children: 'Button',
   variant: 'plain',
   disabled: false,
+}
+
+export const PlainIconLeft = Template.bind({})
+PlainIconLeft.args = {
+  children: 'Back',
+  variant: 'plain',
+  disabled: false,
+  iconLeft: <IconArrowLeft />,
+}
+
+export const PlainIconRight = Template.bind({})
+PlainIconRight.args = {
+  children: 'Next',
+  variant: 'plain',
+  disabled: false,
+  iconRight: <IconArrowRight />,
 }
