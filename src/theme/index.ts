@@ -22,7 +22,7 @@ const animations: DefaultTheme['animations'] = {
   },
 }
 
-const colors: DefaultTheme['colors'] = {
+export const colors: DefaultTheme['colors'] = {
   primary: {
     blue: {
       light: '#D9EDF4',

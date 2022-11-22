@@ -37,11 +37,36 @@ PrimaryIconLeft.args = {
   iconLeft: <IconCheckmark />,
 }
 
+export const PrimaryGreen = Template.bind({})
+PrimaryGreen.args = {
+  children: 'Button',
+  variant: 'primary',
+  disabled: false,
+  colorScheme: 'green',
+}
+
 export const Outline = Template.bind({})
 Outline.args = {
   children: 'Button',
   variant: 'outline',
   disabled: false,
+}
+
+export const OutlineGreen = Template.bind({})
+OutlineGreen.args = {
+  children: 'Button',
+  variant: 'outline',
+  disabled: false,
+  colorScheme: 'green',
+}
+
+export const OutlineGreenIconLeft = Template.bind({})
+OutlineGreenIconLeft.args = {
+  children: 'Button',
+  variant: 'outline',
+  disabled: false,
+  colorScheme: 'green',
+  iconLeft: <IconCheckmark />,
 }
 
 export const Plain = Template.bind({})
@@ -65,4 +90,12 @@ PlainIconRight.args = {
   variant: 'plain',
   disabled: false,
   iconRight: <IconArrowRight />,
+}
+
+export const PlainRed = Template.bind({})
+PlainRed.args = {
+  children: 'Button',
+  variant: 'plain',
+  disabled: false,
+  colorScheme: 'red',
 }

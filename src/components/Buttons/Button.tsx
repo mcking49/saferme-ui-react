@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-import { ButtonProps } from '../../types/button'
+import { ButtonProps, COLOR_SCHEME_MAP } from '../../types/button'
 
-const primaryStyles = css`
+const primaryStyles = css<ButtonProps>`
   background: ${(props) => props.theme.colors.primary.blue.main};
   border-color: ${(props) => props.theme.colors.primary.blue.main};
   color: ${(props) => props.theme.colors.primary.white.main};
@@ -14,9 +14,29 @@ const primaryStyles = css`
   }
 
   &:active {
-    background: ${(props) => props.theme.colors.primary.blueTinted.main};
-    border-color: ${(props) => props.theme.colors.primary.blueTinted.main};
+    background: ${(props) => props.theme.colors.primary.blue};
+    border-color: ${(props) => props.theme.colors.primary.blue};
   }
+
+  /* ColorScheme overrides */
+  ${(props) => {
+    if (props.colorScheme) {
+      return css`
+        background: ${COLOR_SCHEME_MAP[props.colorScheme]};
+        border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+
+        &:hover {
+          background: ${COLOR_SCHEME_MAP[props.colorScheme]};
+          border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+        }
+
+        &:active {
+          background: ${COLOR_SCHEME_MAP[props.colorScheme]};
+          border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+        }
+      `
+    }
+  }}
 
   &:disabled {
     background: ${(props) => props.theme.colors.primary.darkBlue.lightest};
@@ -25,7 +45,7 @@ const primaryStyles = css`
   }
 `
 
-const outlineStyles = css`
+const outlineStyles = css<ButtonProps>`
   background: ${(props) => props.theme.colors.primary.white.main};
   border-color: ${(props) => props.theme.colors.primary.blue.main};
   color: ${(props) => props.theme.colors.primary.blue.main};
@@ -41,6 +61,26 @@ const outlineStyles = css`
     border-color: ${(props) => props.theme.colors.primary.blue.main};
   }
 
+  /* ColorScheme overrides */
+  ${(props) => {
+    if (props.colorScheme) {
+      return css`
+        border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+        color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+
+        &:hover {
+          border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+          background: ${(props) => props.theme.colors.primary.white.main};
+        }
+
+        &:active {
+          border-color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+          background: ${(props) => props.theme.colors.primary.white.main};
+        }
+      `
+    }
+  }}
+
   &:disabled {
     background: ${(props) => props.theme.colors.primary.white.main};
     border-color: ${(props) => props.theme.colors.primary.darkBlue.light};
@@ -48,7 +88,7 @@ const outlineStyles = css`
   }
 `
 
-const plainStyles = css`
+const plainStyles = css<ButtonProps>`
   background: transparent;
   border-color: transparent;
   color: ${(props) => props.theme.colors.primary.blue.main};
@@ -67,6 +107,20 @@ const plainStyles = css`
     background: ${(props) => props.theme.colors.primary.blue.light};
     border-color: ${(props) => props.theme.colors.primary.blue.light};
   }
+
+  /* ColorScheme overrides */
+  ${(props) => {
+    if (props.colorScheme) {
+      return css`
+        color: ${COLOR_SCHEME_MAP[props.colorScheme]};
+
+        &:active {
+          background: ${(props) => props.theme.colors.primary.white.main};
+          border-color: ${(props) => props.theme.colors.primary.white.main};
+        }
+      `
+    }
+  }}
 
   &:disabled {
     background: transparent;
