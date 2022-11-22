@@ -128,12 +128,16 @@ const StyledButton = styled.button<ButtonProps>`
 
 const Button: FC<ButtonProps> = ({
   children,
+  iconLeft,
+  iconRight,
   variant = 'default',
   ...props
 }) => {
   return (
     <StyledButton variant={variant} {...props}>
+      {iconLeft}
       {children}
+      {iconRight}
     </StyledButton>
   )
 }

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  html, body, * {
+  html, body, *:not(svg):not(path) {
     font-family: ${(props) => props.theme.typography.font};
     color: ${(props) => props.theme.typography.body.color};
     font-size: ${(props) => props.theme.typography.body.fontSize};
@@ -43,6 +43,11 @@ export const GlobalStyle = createGlobalStyle`
     text-align: ${(props) => props.theme.typography.button.textAlign};
     text-transform: ${(props) => props.theme.typography.button.textTransform};
     transition: ${(props) => props.theme.animations.buttons.transition};
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 6px;
   }
 
   label {

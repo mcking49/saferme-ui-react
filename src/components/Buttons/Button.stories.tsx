@@ -3,6 +3,7 @@ import React from 'react'
 
 import { DECORATORS } from '../../utils/storybook'
 import { ButtonProps } from '../../types/button'
+import { IconCheckmark } from '../icons'
 
 import { Button } from '.'
 
@@ -26,6 +27,14 @@ Primary.args = {
   children: 'Button',
   variant: 'primary',
   disabled: false,
+}
+
+export const PrimaryIconLeft = Template.bind({})
+PrimaryIconLeft.args = {
+  children: 'Button',
+  variant: 'primary',
+  disabled: false,
+  iconLeft: <IconCheckmark />,
 }
 
 export const Outline = Template.bind({})
