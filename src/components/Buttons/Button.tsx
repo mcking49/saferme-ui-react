@@ -36,6 +36,27 @@ const outlineStyles = css`
   }
 `
 
+const plainStyles = css`
+  background: transparent;
+  border-color: transparent;
+  color: ${(props) => props.theme.colors.primary.blue.main};
+  font-weight: 600;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: capitalize;
+
+  &:hover {
+    background: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+  }
+
+  &:active {
+    background: ${(props) => props.theme.colors.primary.blue.light};
+    border-color: ${(props) => props.theme.colors.primary.blue.light};
+  }
+`
+
 const StyledButton = styled.button<ButtonProps>`
   padding: 12px 24px;
   border-radius: 4px;
@@ -67,6 +88,9 @@ const StyledButton = styled.button<ButtonProps>`
       }
       case 'outline': {
         return outlineStyles
+      }
+      case 'plain': {
+        return plainStyles
       }
       default: {
         return
