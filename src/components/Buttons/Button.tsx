@@ -19,6 +19,23 @@ const primaryStyles = css`
   }
 `
 
+const outlineStyles = css`
+  background: ${(props) => props.theme.colors.primary.white.main};
+  border-color: ${(props) => props.theme.colors.primary.blue.main};
+  color: ${(props) => props.theme.colors.primary.blue.main};
+  font-weight: 600;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.primary.blue.lightest};
+    border-color: ${(props) => props.theme.colors.primary.blue.main};
+  }
+
+  &:active {
+    background: ${(props) => props.theme.colors.primary.blue.light};
+    border-color: ${(props) => props.theme.colors.primary.blue.main};
+  }
+`
+
 const StyledButton = styled.button<ButtonProps>`
   padding: 12px 24px;
   border-radius: 4px;
@@ -47,6 +64,9 @@ const StyledButton = styled.button<ButtonProps>`
     switch (props.variant) {
       case 'primary': {
         return primaryStyles
+      }
+      case 'outline': {
+        return outlineStyles
       }
       default: {
         return
