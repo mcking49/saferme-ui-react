@@ -17,6 +17,12 @@ const primaryStyles = css`
     background: ${(props) => props.theme.colors.primary.blueTinted.main};
     border-color: ${(props) => props.theme.colors.primary.blueTinted.main};
   }
+
+  &:disabled {
+    background: ${(props) => props.theme.colors.primary.darkBlue.lightest};
+    border-color: ${(props) => props.theme.colors.primary.darkBlue.lightest};
+    color: ${(props) => props.theme.colors.primary.darkBlue.medium};
+  }
 `
 
 const outlineStyles = css`
@@ -33,6 +39,12 @@ const outlineStyles = css`
   &:active {
     background: ${(props) => props.theme.colors.primary.blue.light};
     border-color: ${(props) => props.theme.colors.primary.blue.main};
+  }
+
+  &:disabled {
+    background: ${(props) => props.theme.colors.primary.white.main};
+    border-color: ${(props) => props.theme.colors.primary.darkBlue.light};
+    color: ${(props) => props.theme.colors.primary.darkBlue.light};
   }
 `
 
@@ -55,14 +67,21 @@ const plainStyles = css`
     background: ${(props) => props.theme.colors.primary.blue.light};
     border-color: ${(props) => props.theme.colors.primary.blue.light};
   }
+
+  &:disabled {
+    background: transparent;
+    border-color: transparent;
+    color: ${(props) => props.theme.colors.primary.darkBlue.light};
+    text-decoration: none;
+  }
 `
 
 const StyledButton = styled.button<ButtonProps>`
   padding: 12px 24px;
   border-radius: 4px;
   border: 1px solid;
-  border-color: transparent;
   background: none;
+  border-color: transparent;
 
   &:hover {
     background: ${(props) => props.theme.colors.secondary.grey.light};
@@ -78,6 +97,14 @@ const StyledButton = styled.button<ButtonProps>`
   &:focus-visible {
     box-shadow: ${(props) => props.theme.shadows.outline};
     outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: none;
+    border-color: transparent;
+    box-shadow: none;
+    color: ${(props) => props.theme.colors.primary.darkBlue.medium};
   }
 
   /* Variants */

@@ -18,22 +18,26 @@ export const Default = Template.bind({})
 Default.args = {
   children: 'Button',
   variant: 'default',
+  disabled: false,
 }
 
 export const Primary = Template.bind({})
 Primary.args = {
   children: 'Button',
   variant: 'primary',
+  disabled: false,
 }
 
 export const Outline = Template.bind({})
 Outline.args = {
   children: 'Button',
   variant: 'outline',
+  disabled: false,
 }
 
 export const Plain = Template.bind({})
 Plain.args = {
   children: 'Button',
   variant: 'plain',
+  disabled: false,
 }
