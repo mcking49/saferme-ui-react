@@ -2,6 +2,9 @@ import 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    animations: {
+      buttons: CSSObject
+    }
     colors: {
       primary: {
         darkBlue: {
@@ -93,8 +96,12 @@ declare module 'styled-components' {
         }
       }
     }
+    shadows: {
+      outline: string
+    }
     typography: {
       body: CSSObject
+      button: CSSObject
       fieldLabel: CSSObject
       font: string
       heading1: CSSObject
