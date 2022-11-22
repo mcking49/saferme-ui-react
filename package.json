@@ -1,6 +1,6 @@
 {
   "name": "saferme-ui-react",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A UI library for React projects",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -65,7 +65,6 @@
     "react-dom": "^18.2.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "saferme-ui-react@0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/mcking49/saferme-ui-react.git"
