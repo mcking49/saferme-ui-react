@@ -14,7 +14,9 @@
     "prettier": "npx prettier --check .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "preversion": "npm run build",
+    "postversion": "npm publish && git add -A && git push && git push --tags"
   },
   "author": {
     "name": "Miten Chauhan"
@@ -63,5 +65,9 @@
     "react-dom": "^18.2.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "saferme-ui-react@0.2.1"
+  "_id": "saferme-ui-react@0.2.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcking49/saferme-ui-react.git"
+  }
 }
