@@ -1,8 +1,14 @@
-import React from "react";
-import Theme from "./Theme";
+import React from 'react'
 
-const THEME_DECORATOR = (Story: React.FC) => <Theme><Story /></Theme>
+import { GlobalStyle } from '../theme'
 
-export const DECORATORS = [
-  THEME_DECORATOR,
-]
+import Theme from './Theme'
+
+const THEME_DECORATOR = (Story: React.FC) => (
+  <Theme>
+    <GlobalStyle />
+    <Story />
+  </Theme>
+)
+
+export const DECORATORS = [THEME_DECORATOR]

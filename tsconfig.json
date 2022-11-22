@@ -12,7 +12,7 @@
     "outDir": "dist",
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
+    "strict": true
   },
   "exclude": [
     "dist",
