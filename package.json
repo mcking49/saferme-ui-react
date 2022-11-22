@@ -13,9 +13,12 @@
     "prettier-fix": "npx prettier --write .",
     "prettier": "npx prettier --check .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic"
   },
-  "author": "Miten Chauhan",
+  "author": {
+    "name": "Miten Chauhan"
+  },
   "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -35,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^8.2.5",
+    "chromatic": "^6.11.4",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
@@ -57,5 +61,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "saferme-ui-react@0.2.1"
 }
