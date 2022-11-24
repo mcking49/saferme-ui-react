@@ -59,6 +59,7 @@ const InputIcon = styled.div<InputIconProps>`
   justify-content: center;
   text-align: center;
   z-index: 2;
+  color: ${(props) => props.theme.colors.primary.darkBlue.lighter};
 
   ${(props) => {
     switch (props.side) {
