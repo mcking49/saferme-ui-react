@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  html, body, *:not(svg):not(path) {
+  html, body {
     font-family: ${(props) => props.theme.typography.font};
     color: ${(props) => props.theme.typography.body.color};
     font-size: ${(props) => props.theme.typography.body.fontSize};
@@ -48,6 +48,14 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     justify-content: center;
     gap: 6px;
+  }
+
+  input {
+    color: ${(props) => props.theme.typography.fieldInput.color};
+    font-size: ${(props) => props.theme.typography.fieldInput.fontSize};
+    font-style: ${(props) => props.theme.typography.fieldInput.fontStyle};
+    font-weight: ${(props) => props.theme.typography.fieldInput.fontWeight};
+    line-height: ${(props) => props.theme.typography.fieldInput.lineHeight};
   }
 
   label {

@@ -102,6 +102,7 @@ declare module 'styled-components' {
     typography: {
       body: CSSObject
       button: CSSObject
+      fieldInput: CSSObject
       fieldLabel: CSSObject
       font: string
       heading1: CSSObject

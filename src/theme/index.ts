@@ -134,6 +134,13 @@ const typography: DefaultTheme['typography'] = {
     textAlign: 'center',
     textTransform: 'uppercase',
   },
+  fieldInput: {
+    color: 'inherit',
+    fontSize: 'inherit',
+    fontStyle: 'inherit',
+    fontWeight: 'inherit',
+    lineHeight: 'inherit',
+  },
   fieldLabel: {
     color: colors.primary.darkBlue.medium,
     fontSize: '11px',
