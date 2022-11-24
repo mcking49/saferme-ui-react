@@ -18,12 +18,14 @@ export const Default = Template.bind({})
 Default.args = {
   placeholder: 'Placeholder',
   disabled: false,
+  isInvalid: false,
 }
 
 export const Disabled = Template.bind({})
 Disabled.args = {
   placeholder: 'Placeholder',
   disabled: true,
+  isInvalid: false,
 }
 
 export const LeftIcon = Template.bind({})
@@ -31,6 +33,7 @@ LeftIcon.args = {
   placeholder: 'Placeholder',
   disabled: false,
   leftIcon: <IconProfile />,
+  isInvalid: false,
 }
 
 export const RightIcon = Template.bind({})
@@ -38,6 +41,7 @@ RightIcon.args = {
   placeholder: 'Placeholder',
   disabled: false,
   rightIcon: <IconClose />,
+  isInvalid: false,
 }
 
 export const LeftAndRightIcon = Template.bind({})
@@ -46,4 +50,12 @@ LeftAndRightIcon.args = {
   disabled: false,
   leftIcon: <IconProfile />,
   rightIcon: <IconClose />,
+  isInvalid: false,
+}
+
+export const Invalid = Template.bind({})
+Invalid.args = {
+  placeholder: 'Placeholder',
+  disabled: false,
+  isInvalid: true,
 }

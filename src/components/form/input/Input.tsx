@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  isInvalid?: boolean
   leftIcon?: ReactNode
   rightIcon?: ReactNode
 }
@@ -38,6 +39,19 @@ const InputStyle = styled.input<InputProps>`
     border-color: ${(props) => props.theme.colors.secondary.grey.main};
     background: ${(props) => props.theme.colors.secondary.grey.lighter};
   }
+
+  ${(props) => {
+    if (props.isInvalid) {
+      return css`
+        border-color: ${(props) => props.theme.colors.secondary.red.error};
+
+        &:active,
+        &:focus {
+          border-color: ${(props) => props.theme.colors.secondary.red.error};
+        }
+      `
+    }
+  }}
 `
 
 const InputWrap = styled.div`
