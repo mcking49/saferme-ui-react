@@ -3,7 +3,7 @@ import React from 'react'
 import { GlobalStyle } from '../theme'
 import Theme from '../utils/Theme'
 
-import { ToastProvider } from './Toast/ToastProvider'
+import { ToastProvider } from './toast/ToastProvider'
 
 const SaferMeUIProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
