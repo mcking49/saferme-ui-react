@@ -109,5 +109,8 @@ declare module 'styled-components' {
       helpText: CSSObject
       hyperlink: CSSObject
     }
+    zIndex: {
+      toast: number
+    }
   }
 }

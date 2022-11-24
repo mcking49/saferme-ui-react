@@ -2,7 +2,7 @@ import React from 'react'
 
 import { IconProps } from '../../../types/icon'
 
-const IconProfile = ({ color = 'currentColor', size = '1rem' }: IconProps) => (
+const IconProfile = ({ color = 'currentColor', size = '1em' }: IconProps) => (
   <svg
     width={size}
     height={size}

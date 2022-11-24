@@ -173,11 +173,16 @@ const typography: DefaultTheme['typography'] = {
   },
 }
 
+const zIndex: DefaultTheme['zIndex'] = {
+  toast: 9999,
+}
+
 export const THEME: DefaultTheme = {
   animations,
   colors,
   shadows,
   typography,
+  zIndex,
 }
 
 export * from './globals'

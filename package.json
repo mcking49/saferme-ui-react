@@ -58,6 +58,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "react-hot-toast": "^2.4.0",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {
