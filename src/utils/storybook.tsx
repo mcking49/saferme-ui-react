@@ -1,14 +1,11 @@
 import React from 'react'
 
-import { GlobalStyle } from '../theme'
-
-import Theme from './Theme'
+import SaferMeUIProvider from '../components/SaferMeUIProvider'
 
 const THEME_DECORATOR = (Story: React.FC) => (
-  <Theme>
-    <GlobalStyle />
+  <SaferMeUIProvider>
     <Story />
-  </Theme>
+  </SaferMeUIProvider>
 )
 
 export const DECORATORS = [THEME_DECORATOR]
