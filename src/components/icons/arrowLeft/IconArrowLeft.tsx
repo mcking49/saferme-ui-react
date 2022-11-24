@@ -2,10 +2,7 @@ import React from 'react'
 
 import { IconProps } from '../../../types/icon'
 
-const IconArrowLeft = ({
-  color = 'currentColor',
-  size = '1rem',
-}: IconProps) => (
+const IconArrowLeft = ({ color = 'currentColor', size = '1em' }: IconProps) => (
   <svg
     width={size}
     height={size}

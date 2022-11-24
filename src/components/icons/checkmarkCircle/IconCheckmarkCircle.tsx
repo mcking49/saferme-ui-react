@@ -4,7 +4,7 @@ import { IconProps } from '../../../types/icon'
 
 const IconCheckmarkCircle = ({
   color = 'currentColor',
-  size = '1rem',
+  size = '1em',
 }: IconProps) => (
   <svg
     width={size}

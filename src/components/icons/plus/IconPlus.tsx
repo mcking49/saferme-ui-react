@@ -2,7 +2,7 @@ import React from 'react'
 
 import { IconProps } from '../../../types/icon'
 
-const IconPlus = ({ color = 'currentColor', size = '1rem' }: IconProps) => (
+const IconPlus = ({ color = 'currentColor', size = '1em' }: IconProps) => (
   <svg
     width={size}
     height={size}

@@ -2,10 +2,7 @@ import React from 'react'
 
 import { IconProps } from '../../../types/icon'
 
-const IconCheckmark = ({
-  color = 'currentColor',
-  size = '1rem',
-}: IconProps) => (
+const IconCheckmark = ({ color = 'currentColor', size = '1em' }: IconProps) => (
   <svg
     width={size}
     height={size}
