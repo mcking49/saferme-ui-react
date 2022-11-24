@@ -11,7 +11,7 @@ const ToastExample = ({ type }: ToastWrapProps) => {
     toast(type, 'Hello World!')
   }
 
-  return <button onClick={open}>Toast</button>
+  return <button onClick={open}>Click Me!</button>
 }
 
 export default {
