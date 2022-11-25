@@ -50,8 +50,9 @@ export const GlobalStyle = createGlobalStyle`
     gap: 6px;
   }
 
-  input {
+  input, textarea {
     color: ${(props) => props.theme.typography.fieldInput.color};
+    font-family: ${(props) => props.theme.typography.font};
     font-size: ${(props) => props.theme.typography.fieldInput.fontSize};
     font-style: ${(props) => props.theme.typography.fieldInput.fontStyle};
     font-weight: ${(props) => props.theme.typography.fieldInput.fontWeight};
