@@ -17,3 +17,8 @@ export const Default = Template.bind({})
 Default.args = {
   isRequired: false,
 }
+
+export const Required = Template.bind({})
+Required.args = {
+  isRequired: true,
+}
