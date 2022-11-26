@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     color: ${(props) => props.theme.typography.button.color};
     cursor: pointer;
+    font-family: ${(props) => props.theme.typography.font};
     font-size: ${(props) => props.theme.typography.button.fontSize};
     font-weight: ${(props) => props.theme.typography.button.fontWeight};
     line-height: ${(props) => props.theme.typography.button.lineHeight};
