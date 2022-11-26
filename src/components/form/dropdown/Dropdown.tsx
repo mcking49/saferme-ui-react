@@ -129,12 +129,18 @@ const DropdownMenu = styled.ul<DropdownMenuProps>`
 `
 
 const DropdownMenuItem = styled.li`
+  box-sizing: border-box;
   cursor: pointer;
   padding: 10px 16px;
   width: 100%;
+  transition: ${(props) => props.theme.animations.general};
 
   &:hover {
-    background: ${(props) => props.theme.colors.secondary.grey.lighter};
+    background: ${(props) => props.theme.colors.primary.blue.light};
+  }
+
+  &:active {
+    background: ${(props) => props.theme.colors.primary.blue.lighter};
   }
 `
 
