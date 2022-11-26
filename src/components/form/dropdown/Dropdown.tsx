@@ -31,6 +31,10 @@ const DropdownButton = styled.button`
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.secondary.grey.lighter};
+  }
 `
 
 const DropdownIcon = styled.div<DropdownIconProps>`
