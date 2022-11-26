@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 
-import { IconArrowDown } from '../../icons'
+import { IconArrowDown, IconCheckmark } from '../../icons'
 
 export interface DropdownOption {
   label: string
@@ -26,6 +26,10 @@ interface DropdownIconProps {
 
 interface DropdownMenuProps {
   isShowing: boolean
+}
+
+interface DropdownMenuItemProps {
+  isSelected: boolean
 }
 
 const DropdownButton = styled.button<DropdownButtonProps>`
@@ -128,12 +132,16 @@ const DropdownMenu = styled.ul<DropdownMenuProps>`
   opacity: ${(props) => (props.isShowing ? 1 : 0)};
 `
 
-const DropdownMenuItem = styled.li`
+const DropdownMenuItem = styled.li<DropdownMenuItemProps>`
   box-sizing: border-box;
   cursor: pointer;
   padding: 10px 16px;
   width: 100%;
   transition: ${(props) => props.theme.animations.general};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 
   &:hover {
     background: ${(props) => props.theme.colors.primary.blue.light};
@@ -224,9 +232,11 @@ const Dropdown: FC<DropdownProps> = ({
           {options.map((option) => (
             <DropdownMenuItem
               key={option.value}
+              isSelected={option.value === selectedOption?.value}
               onClick={() => onSelectOption(option)}
             >
               {option.label}
+              {option.value === selectedOption?.value && <IconCheckmark />}
             </DropdownMenuItem>
           ))}
         </DropdownMenu>
