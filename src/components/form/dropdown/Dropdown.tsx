@@ -1,11 +1,15 @@
 import React, { FC, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { IconArrowDown } from '../../icons'
 
 export interface DropdownProps {
   placeholder?: string
   value?: string
+}
+
+interface DropdownButtonProps {
+  isMenuOpen: boolean
 }
 
 interface DropdownIconProps {
@@ -16,7 +20,7 @@ const DropdownWrapper = styled.div`
   position: relative;
 `
 
-const DropdownButton = styled.button`
+const DropdownButton = styled.button<DropdownButtonProps>`
   color: ${(props) => props.theme.colors.primary.darkBlue.main};
   background: ${(props) => props.theme.colors.secondary.grey.light};
   border: 1px solid;
@@ -35,6 +39,15 @@ const DropdownButton = styled.button`
   &:hover {
     background: ${(props) => props.theme.colors.secondary.grey.lighter};
   }
+
+  ${(props) => {
+    if (props.isMenuOpen) {
+      return css`
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      `
+    }
+  }}
 `
 
 const DropdownIcon = styled.div<DropdownIconProps>`
@@ -58,7 +71,10 @@ const Dropdown: FC<DropdownProps> = ({ placeholder, value }) => {
 
   return (
     <DropdownWrapper>
-      <DropdownButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <DropdownButton
+        isMenuOpen={isMenuOpen}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
         {text}
         <DropdownIcon isMenuOpen={isMenuOpen}>
           <IconArrowDown />
