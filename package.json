@@ -1,6 +1,6 @@
 {
   "name": "saferme-ui-react",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A UI library for React projects",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
