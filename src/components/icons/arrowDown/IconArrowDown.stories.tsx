@@ -4,15 +4,15 @@ import React from 'react'
 import { DECORATORS } from '../../../utils/storybook'
 import { IconProps } from '../../../types/icon'
 
-import { IconArrowLeft } from '.'
+import { IconArrowDown } from '.'
 
 export default {
-  title: 'Icons/ArrowLeft',
-  component: IconArrowLeft,
+  title: 'Icons/ArrowDown',
+  component: IconArrowDown,
   decorators: DECORATORS,
-} as Meta<typeof IconArrowLeft>
+} as Meta<typeof IconArrowDown>
 
-const Template: Story<IconProps> = (args) => <IconArrowLeft {...args} />
+const Template: Story<IconProps> = (args) => <IconArrowDown {...args} />
 
 export const Standard = Template.bind({})
 Standard.args = {

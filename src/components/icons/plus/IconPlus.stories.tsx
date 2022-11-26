@@ -16,6 +16,6 @@ const Template: Story<IconProps> = (args) => <IconPlus {...args} />
 
 export const Standard = Template.bind({})
 Standard.args = {
-  size: '1rem',
+  size: '1em',
   color: 'currentColor',
 }

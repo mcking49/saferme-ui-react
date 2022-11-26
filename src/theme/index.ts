@@ -20,6 +20,7 @@ const animations: DefaultTheme['animations'] = {
   buttons: {
     transition: 'all 0.2s ease',
   },
+  general: 'all 0.2s ease',
 }
 
 export const colors: DefaultTheme['colors'] = {
@@ -133,6 +134,13 @@ const typography: DefaultTheme['typography'] = {
     lineHeight: '1.6rem',
     textAlign: 'center',
     textTransform: 'uppercase',
+  },
+  fieldInput: {
+    color: 'inherit',
+    fontSize: 'inherit',
+    fontStyle: 'inherit',
+    fontWeight: 'inherit',
+    lineHeight: 'inherit',
   },
   fieldLabel: {
     color: colors.primary.darkBlue.medium,

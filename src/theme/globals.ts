@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  html, body, *:not(svg):not(path) {
+  html, body {
     font-family: ${(props) => props.theme.typography.font};
     color: ${(props) => props.theme.typography.body.color};
     font-size: ${(props) => props.theme.typography.body.fontSize};
@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     color: ${(props) => props.theme.typography.button.color};
     cursor: pointer;
+    font-family: ${(props) => props.theme.typography.font};
     font-size: ${(props) => props.theme.typography.button.fontSize};
     font-weight: ${(props) => props.theme.typography.button.fontWeight};
     line-height: ${(props) => props.theme.typography.button.lineHeight};
@@ -48,6 +49,15 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     justify-content: center;
     gap: 6px;
+  }
+
+  input, textarea {
+    color: ${(props) => props.theme.typography.fieldInput.color};
+    font-family: ${(props) => props.theme.typography.font};
+    font-size: ${(props) => props.theme.typography.fieldInput.fontSize};
+    font-style: ${(props) => props.theme.typography.fieldInput.fontStyle};
+    font-weight: ${(props) => props.theme.typography.fieldInput.fontWeight};
+    line-height: ${(props) => props.theme.typography.fieldInput.lineHeight};
   }
 
   label {

@@ -4,6 +4,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     animations: {
       buttons: CSSObject
+      general: string
     }
     colors: {
       primary: {
@@ -102,6 +103,7 @@ declare module 'styled-components' {
     typography: {
       body: CSSObject
       button: CSSObject
+      fieldInput: CSSObject
       fieldLabel: CSSObject
       font: string
       heading1: CSSObject

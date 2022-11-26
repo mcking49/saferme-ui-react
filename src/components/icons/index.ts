@@ -1,3 +1,4 @@
+export * from './arrowDown'
 export * from './arrowLeft'
 export * from './arrowRight'
 export * from './checkmark'
