@@ -20,6 +20,7 @@ const animations: DefaultTheme['animations'] = {
   buttons: {
     transition: 'all 0.2s ease',
   },
+  general: 'all 0.2s ease',
 }
 
 export const colors: DefaultTheme['colors'] = {

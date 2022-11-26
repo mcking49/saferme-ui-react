@@ -1,11 +1,17 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import { IconArrowDown } from '../../icons'
 
+export interface DropdownOption {
+  label: string
+  value: string | number
+}
+
 export interface DropdownProps {
   isDisabled?: boolean
   isInvalid?: boolean
+  options: DropdownOption[]
   placeholder?: string
   value?: string
 }
@@ -18,9 +24,9 @@ interface DropdownIconProps {
   isMenuOpen: boolean
 }
 
-const DropdownWrapper = styled.div`
-  position: relative;
-`
+interface DropdownMenuProps {
+  isShowing: boolean
+}
 
 const DropdownButton = styled.button<DropdownButtonProps>`
   outline: none;
@@ -39,10 +45,15 @@ const DropdownButton = styled.button<DropdownButtonProps>`
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  width: 100%;
 
   &:active,
   &:focus {
     border-color: ${(props) => props.theme.colors.primary.blue.main};
+
+    + ul {
+      border-color: ${(props) => props.theme.colors.primary.blue.main};
+    }
   }
 
   &:hover {
@@ -57,6 +68,10 @@ const DropdownButton = styled.button<DropdownButtonProps>`
         &:active,
         &:focus {
           border-color: ${props.theme.colors.secondary.red.error};
+
+          + ul {
+            border-color: ${props.theme.colors.secondary.red.error};
+          }
         }
       `
     }
@@ -92,33 +107,104 @@ const DropdownIcon = styled.div<DropdownIconProps>`
   transform: rotate(${(props) => (props.isMenuOpen ? 180 : 0)}deg);
 `
 
+const DropdownMenu = styled.ul<DropdownMenuProps>`
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: ${(props) => props.theme.colors.secondary.grey.light};
+  border: 1px solid;
+  border-top-width: 0;
+  border-color: ${(props) => props.theme.colors.secondary.grey.main};
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: calc(100% - 2px);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  transition: ${(props) => props.theme.animations.general};
+  opacity: ${(props) => (props.isShowing ? 1 : 0)};
+`
+
+const DropdownMenuItem = styled.li`
+  cursor: pointer;
+  padding: 10px 16px;
+  width: 100%;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.secondary.grey.lighter};
+  }
+`
+
 const DropdownPlaceholder = styled.span`
   color: ${(props) => props.theme.colors.primary.darkBlue.lighter};
+`
+
+const DropdownWrapper = styled.div`
+  position: relative;
 `
 
 const Dropdown: FC<DropdownProps> = ({
   isDisabled,
   isInvalid,
+  options,
   placeholder,
   value,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuVisible, setIsMenuVisible] = useState(false)
 
   const text = value ?? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
+
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuVisible(false)
+    } else {
+      setIsMenuOpen(true)
+    }
+  }
+
+  // If menu is mounted, update visibility state to animate it in
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuVisible(true)
+    }
+  }, [isMenuOpen])
+
+  // If menu has been hidden, wait for animation before unmounting
+  useEffect(() => {
+    if (!isMenuVisible) {
+      setTimeout(() => {
+        setIsMenuOpen(false)
+      }, 200)
+    }
+  }, [isMenuVisible])
 
   return (
     <DropdownWrapper>
       <DropdownButton
         disabled={isDisabled}
         isInvalid={isInvalid}
-        isMenuOpen={isMenuOpen}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        isMenuOpen={isMenuOpen && isMenuVisible}
+        onClick={toggleMenu}
       >
         {text}
-        <DropdownIcon isMenuOpen={isMenuOpen}>
+        <DropdownIcon isMenuOpen={isMenuOpen && isMenuVisible}>
           <IconArrowDown />
         </DropdownIcon>
       </DropdownButton>
+
+      {isMenuOpen && (
+        <DropdownMenu isShowing={isMenuVisible}>
+          {options.map((option) => (
+            <DropdownMenuItem key={option.value}>
+              {option.label}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenu>
+      )}
     </DropdownWrapper>
   )
 }
