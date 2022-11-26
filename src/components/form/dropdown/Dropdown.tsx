@@ -13,7 +13,7 @@ export interface DropdownProps {
   isInvalid?: boolean
   options: DropdownOption[]
   placeholder?: string
-  value?: string
+  defaultValue?: string | number
 }
 
 type DropdownButtonProps = Pick<DropdownProps, 'isInvalid'> & {
@@ -151,12 +151,24 @@ const Dropdown: FC<DropdownProps> = ({
   isInvalid,
   options,
   placeholder,
-  value,
+  defaultValue,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuVisible, setIsMenuVisible] = useState(false)
 
-  const text = value ?? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
+  const [selectedOption, setSelectedOption] = useState<DropdownOption | null>(
+    () => {
+      if (typeof defaultValue !== 'undefined') {
+        return options.find((option) => option.value === defaultValue) ?? null
+      }
+
+      return null
+    }
+  )
+
+  const text = selectedOption?.label ?? (
+    <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
+  )
 
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -164,6 +176,11 @@ const Dropdown: FC<DropdownProps> = ({
     } else {
       setIsMenuOpen(true)
     }
+  }
+
+  const onSelectOption = (option: DropdownOption) => {
+    setSelectedOption(option)
+    toggleMenu()
   }
 
   // If menu is mounted, update visibility state to animate it in
@@ -199,7 +216,10 @@ const Dropdown: FC<DropdownProps> = ({
       {isMenuOpen && (
         <DropdownMenu isShowing={isMenuVisible}>
           {options.map((option) => (
-            <DropdownMenuItem key={option.value}>
+            <DropdownMenuItem
+              key={option.value}
+              onClick={() => onSelectOption(option)}
+            >
               {option.label}
             </DropdownMenuItem>
           ))}

@@ -18,7 +18,7 @@ const Template: Story<DropdownProps> = (args) => <Dropdown {...args} />
 export const Default = Template.bind({})
 Default.args = {
   placeholder: 'Placeholder',
-  value: undefined,
+  defaultValue: undefined,
   isDisabled: false,
   isInvalid: false,
   options: mockOptions,
@@ -27,7 +27,7 @@ Default.args = {
 export const Disabled = Template.bind({})
 Disabled.args = {
   placeholder: 'Placeholder',
-  value: undefined,
+  defaultValue: undefined,
   isDisabled: true,
   isInvalid: false,
   options: mockOptions,
@@ -36,7 +36,7 @@ Disabled.args = {
 export const Invalid = Template.bind({})
 Invalid.args = {
   placeholder: undefined,
-  value: 'Value',
+  defaultValue: 1,
   isDisabled: false,
   isInvalid: true,
   options: mockOptions,
@@ -45,7 +45,7 @@ Invalid.args = {
 export const WithValue = Template.bind({})
 WithValue.args = {
   placeholder: undefined,
-  value: 'Value',
+  defaultValue: 1,
   isDisabled: false,
   isInvalid: false,
   options: mockOptions,
