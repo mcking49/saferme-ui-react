@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { IconArrowDown } from '../../icons'
 
 export interface DropdownProps {
+  isDisabled?: boolean
   placeholder?: string
   value?: string
 }
@@ -21,6 +22,7 @@ const DropdownWrapper = styled.div`
 `
 
 const DropdownButton = styled.button<DropdownButtonProps>`
+  transition: all 0.2s ease;
   color: ${(props) => props.theme.colors.primary.darkBlue.main};
   background: ${(props) => props.theme.colors.secondary.grey.light};
   border: 1px solid;
@@ -48,6 +50,11 @@ const DropdownButton = styled.button<DropdownButtonProps>`
       `
     }
   }}
+
+  &:disabled {
+    cursor: not-allowed;
+    background: ${(props) => props.theme.colors.secondary.grey.lighter};
+  }
 `
 
 const DropdownIcon = styled.div<DropdownIconProps>`
@@ -64,7 +71,7 @@ const DropdownPlaceholder = styled.span`
   color: ${(props) => props.theme.colors.primary.darkBlue.lighter};
 `
 
-const Dropdown: FC<DropdownProps> = ({ placeholder, value }) => {
+const Dropdown: FC<DropdownProps> = ({ isDisabled, placeholder, value }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const text = value ?? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
@@ -72,6 +79,7 @@ const Dropdown: FC<DropdownProps> = ({ placeholder, value }) => {
   return (
     <DropdownWrapper>
       <DropdownButton
+        disabled={isDisabled}
         isMenuOpen={isMenuOpen}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
