@@ -1,12 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
+
+import { IconArrowDown } from '../../icons'
 
 export interface DropdownProps {
   placeholder?: string
   value?: string
 }
 
-const Wrapper = styled.div`
+interface DropdownIconProps {
+  isMenuOpen: boolean
+}
+
+const DropdownWrapper = styled.div`
   position: relative;
 `
 
@@ -21,6 +27,20 @@ const DropdownButton = styled.button`
   border-radius: 4px;
   font-size: ${(props) => props.theme.typography.body.fontSize};
   line-height: ${(props) => props.theme.typography.body.lineHeight};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+`
+
+const DropdownIcon = styled.div<DropdownIconProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: ${(props) => props.theme.colors.primary.darkBlue.lighter};
+  transition: all 0.2s ease;
+  transform: rotate(${(props) => (props.isMenuOpen ? 180 : 0)}deg);
 `
 
 const DropdownPlaceholder = styled.span`
@@ -28,12 +48,19 @@ const DropdownPlaceholder = styled.span`
 `
 
 const Dropdown: FC<DropdownProps> = ({ placeholder, value }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const text = value ?? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
 
   return (
-    <Wrapper>
-      <DropdownButton>{text}</DropdownButton>
-    </Wrapper>
+    <DropdownWrapper>
+      <DropdownButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {text}
+        <DropdownIcon isMenuOpen={isMenuOpen}>
+          <IconArrowDown />
+        </DropdownIcon>
+      </DropdownButton>
+    </DropdownWrapper>
   )
 }
 
