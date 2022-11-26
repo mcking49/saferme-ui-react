@@ -5,11 +5,12 @@ import { IconArrowDown } from '../../icons'
 
 export interface DropdownProps {
   isDisabled?: boolean
+  isInvalid?: boolean
   placeholder?: string
   value?: string
 }
 
-interface DropdownButtonProps {
+type DropdownButtonProps = Pick<DropdownProps, 'isInvalid'> & {
   isMenuOpen: boolean
 }
 
@@ -22,6 +23,7 @@ const DropdownWrapper = styled.div`
 `
 
 const DropdownButton = styled.button<DropdownButtonProps>`
+  outline: none;
   transition: all 0.2s ease;
   color: ${(props) => props.theme.colors.primary.darkBlue.main};
   background: ${(props) => props.theme.colors.secondary.grey.light};
@@ -38,15 +40,38 @@ const DropdownButton = styled.button<DropdownButtonProps>`
   justify-content: space-between;
   gap: 16px;
 
+  &:active,
+  &:focus {
+    border-color: ${(props) => props.theme.colors.primary.blue.main};
+  }
+
   &:hover {
     background: ${(props) => props.theme.colors.secondary.grey.lighter};
   }
+
+  ${(props) => {
+    if (props.isInvalid) {
+      return css`
+        border-color: ${props.theme.colors.secondary.red.error};
+
+        &:active,
+        &:focus {
+          border-color: ${props.theme.colors.secondary.red.error};
+        }
+      `
+    }
+  }}
 
   ${(props) => {
     if (props.isMenuOpen) {
       return css`
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+
+        &:active,
+        &:focus {
+          border-bottom-color: ${props.theme.colors.secondary.grey.main};
+        }
       `
     }
   }}
@@ -71,7 +96,12 @@ const DropdownPlaceholder = styled.span`
   color: ${(props) => props.theme.colors.primary.darkBlue.lighter};
 `
 
-const Dropdown: FC<DropdownProps> = ({ isDisabled, placeholder, value }) => {
+const Dropdown: FC<DropdownProps> = ({
+  isDisabled,
+  isInvalid,
+  placeholder,
+  value,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const text = value ?? <DropdownPlaceholder>{placeholder}</DropdownPlaceholder>
@@ -80,6 +110,7 @@ const Dropdown: FC<DropdownProps> = ({ isDisabled, placeholder, value }) => {
     <DropdownWrapper>
       <DropdownButton
         disabled={isDisabled}
+        isInvalid={isInvalid}
         isMenuOpen={isMenuOpen}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >

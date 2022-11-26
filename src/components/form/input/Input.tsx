@@ -43,11 +43,11 @@ const InputStyle = styled.input<InputProps>`
   ${(props) => {
     if (props.isInvalid) {
       return css`
-        border-color: ${(props) => props.theme.colors.secondary.red.error};
+        border-color: ${props.theme.colors.secondary.red.error};
 
         &:active,
         &:focus {
-          border-color: ${(props) => props.theme.colors.secondary.red.error};
+          border-color: ${props.theme.colors.secondary.red.error};
         }
       `
     }
