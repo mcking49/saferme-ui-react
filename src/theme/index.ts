@@ -116,6 +116,7 @@ export const colors: DefaultTheme['colors'] = {
 }
 
 const shadows: DefaultTheme['shadows'] = {
+  modal: `2px 4px 12px rgba(0, 0, 0, 0.6)`,
   outline: `0 0 0 2px ${colors.primary.blue.lighterRGB}`,
 }
 
@@ -161,6 +162,13 @@ const typography: DefaultTheme['typography'] = {
   heading2: {
     color: colors.primary.darkBlue.main,
     fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 700,
+    lineHeight: '1.6rem',
+  },
+  heading3: {
+    color: colors.primary.darkBlue.main,
+    fontSize: '14px',
     fontStyle: 'normal',
     fontWeight: 700,
     lineHeight: '1.6rem',

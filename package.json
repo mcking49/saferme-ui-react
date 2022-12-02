@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "react-hot-toast": "^2.4.0",
+    "react-overlays": "^5.2.1",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {

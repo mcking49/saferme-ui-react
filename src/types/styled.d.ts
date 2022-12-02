@@ -98,6 +98,7 @@ declare module 'styled-components' {
       }
     }
     shadows: {
+      modal: string
       outline: string
     }
     typography: {
@@ -108,6 +109,7 @@ declare module 'styled-components' {
       font: string
       heading1: CSSObject
       heading2: CSSObject
+      heading3: CSSObject
       helpText: CSSObject
       hyperlink: CSSObject
     }
