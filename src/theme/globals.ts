@@ -16,14 +16,25 @@ export const GlobalStyle = createGlobalStyle`
     font-style: ${(props) => props.theme.typography.heading1.fontStyle};
     font-weight: ${(props) => props.theme.typography.heading1.fontWeight};
     line-height: ${(props) => props.theme.typography.heading1.lineHeight};
+    margin: 0;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2 {
     color: ${(props) => props.theme.typography.heading2.color};
     font-size: ${(props) => props.theme.typography.heading2.fontSize};
     font-style: ${(props) => props.theme.typography.heading2.fontStyle};
     font-weight: ${(props) => props.theme.typography.heading2.fontWeight};
     line-height: ${(props) => props.theme.typography.heading2.lineHeight};
+    margin: 0;
+  }
+
+  h3, h4, h5, h6 {
+    color: ${(props) => props.theme.typography.heading3.color};
+    font-size: ${(props) => props.theme.typography.heading3.fontSize};
+    font-style: ${(props) => props.theme.typography.heading3.fontStyle};
+    font-weight: ${(props) => props.theme.typography.heading3.fontWeight};
+    line-height: ${(props) => props.theme.typography.heading3.lineHeight};
+    margin: 0;
   }
 
   a {
