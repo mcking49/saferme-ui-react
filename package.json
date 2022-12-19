@@ -72,6 +72,9 @@
     "type": "git",
     "url": "https://github.com/mcking49/saferme-ui-react.git"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "@mcking49:registry": "https://npm.pkg.github.com"
   }
